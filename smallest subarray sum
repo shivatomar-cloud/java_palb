@@ -1,0 +1,15 @@
+import java.util.*;
+
+class Solution {
+    public static int smallestSubWithSum(int x, int[] arr) {
+        int n = arr.length, sum = 0, min = n + 1, l = 0;
+        for (int r = 0; r < n; r++) {
+            sum += arr[r];
+            while (sum > x) {
+                min = Math.min(min, r - l + 1);
+                sum -= arr[l++];
+            }
+        }
+        return min == n + 1 ? 0 : min;
+    }
+}
