@@ -1,0 +1,13 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+		int n=10;
+		BigInteger f=BigInteger.ONE;
+		for(int i=1; i<=n; i++)f=f.multiply(BigInteger.valueOf(i));
+		List<Integer> r=new ArrayList<>();
+		for(char c:f.toString().toCharArray())r.add(c-'0');
+		System.out.println(r);
+	}
+}
