@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] mat = {
+            {1, 3, 5},
+            {2, 6, 9},
+            {3, 6, 9}
+        };
+        System.out.println(findMedian(mat));
+    }
+
+    static int findMedian(int[][] mat) {
+        int n = mat.length, m = mat[0].length;
+        int[] arr = new int[n * m];
+        int k = 0;
+
+        for (int[] row : mat)
+            for (int x : row)
+                arr[k++] = x;
+
+        Arrays.sort(arr);
+        return arr[arr.length / 2];
+    }
+}
