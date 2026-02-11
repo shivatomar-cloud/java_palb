@@ -1,0 +1,17 @@
+import java.util.*;
+
+class Main{
+    static boolean isPal(int n){
+        int r=0,t=n;
+        while(n>0){r=r*10+n%10;n/=10;}
+        return r==t;
+    }
+    static boolean check(int[] a){
+        for(int x:a) if(!isPal(x)) return false;
+        return true;
+    }
+    public static void main(String[] args){
+        int[] arr={111,222,333,444,555};
+        System.out.print(check(arr));
+    }
+}
