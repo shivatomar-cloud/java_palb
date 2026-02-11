@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   int[]arr={1,2,3,-5,-7,4,5,-2,-1,0,10 };
+	   int csum=arr[0];
+	   int msum=arr[0];
+	    for(int i:arr){
+	       csum=Math.max(i,csum+i);
+	       msum=Math.max(msum,csum);
+	   }
+	   System.out.println("Max array sum is: "+msum);
+	}    
+}
