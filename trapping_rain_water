@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+		int[] a= {3,0,2,0,4};
+		int l=0,r=a.length-1,lm=0,rm=0,w=0;
+		while(l<r) {
+			if(a[l]<a[r]) {
+				lm=Math.max(lm,a[l]);
+				w+=lm-a[l++];
+			} else {
+				rm=Math.max(rm,a[r]);
+				w+=rm-a[r--];
+			}
+		}
+		System.out.println(w);
+	}
+}
